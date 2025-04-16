@@ -102,8 +102,3 @@ while run:
 
     time.sleep(interval)
     
-# Download button outside loop
-if not run and not st.session_state.history.empty:
-    st.subheader("📥 Download Telemetry Log")
-    csv = st.session_state.history.to_csv(index=False).encode('utf-8')
-    st.download_button("Download CSV", csv, "telemetry_log.csv", "text/csv", key="download_log_final")
